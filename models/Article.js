@@ -10,11 +10,16 @@ const ArticleSchema = new Schema({
         type: String,
         required: true
     },
-    image: { type: String },
+    img: { type: String },
+    text: { type: String },
+    date: {
+        type: String
+    },
     _site: {
         type: Schema.Types.ObjectId,
         ref: 'Site'
     }
 });
 
-mongoose.model('Article', ArticleSchema);
+const Article = mongoose.model('article', ArticleSchema);
+module.exports = Article;

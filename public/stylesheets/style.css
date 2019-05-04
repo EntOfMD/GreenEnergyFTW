@@ -7,6 +7,9 @@
 a {
     color: #00b7ff;
 }
+#badgeNum {
+    display: none;
+}
 
 #navBrand {
     text-transform: capitalize;
