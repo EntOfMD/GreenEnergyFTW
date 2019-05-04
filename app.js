@@ -1,17 +1,17 @@
-require('dotenv').config();
 const express = require('express');
 const exphbs = require('express-handlebars');
 const path = require('path');
 const bodyParser = require('body-parser');
 const createError = require('http-errors');
-const axios = require('axios');
-const cheerio = require('cheerio');
+const mongoose = require('mongoose');
 
 const logger = require('morgan');
 
 const apiRouter = require('./routes/api');
 const htmlRouter = require('./routes/html');
 
+var MONGODB_URI =
+    process.env.MONGODB_URI || 'mongodb://localhost/GreenEnergyFTW';
 const app = express();
 
 app.engine(
@@ -27,12 +27,22 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
+require('./models');
 app.use('/', htmlRouter);
 app.use('/api', apiRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
     next(createError(404));
+});
+
+// database
+mongoose.connect(MONGODB_URI, { useNewUrlParser: true }, err => {
+    if (err) {
+        throw err;
+    } else {
+        console.log(`Successfully connected to the database.`);
+    }
 });
 
 // error handler
