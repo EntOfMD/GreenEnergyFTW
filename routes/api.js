@@ -1,9 +1,10 @@
-var express = require('express');
-var router = express.Router();
+const router = require('express').Router();
+const axios = require('axios');
+const cheerio = require('cheerio');
 
-/* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
+router.get('/scrape', function(req, res, next) {
+    // res.redirect(301, '/app');
+    axios.get;
 });
 
 module.exports = router;
