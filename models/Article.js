@@ -15,6 +15,10 @@ const ArticleSchema = new Schema({
     date: {
         type: String
     },
+    scrapedDate: {
+        type: Date,
+        default: Date.now
+    },
     _site: {
         type: Schema.Types.ObjectId,
         ref: 'Site'
