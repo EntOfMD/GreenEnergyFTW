@@ -1,6 +1,4 @@
 const router = require('express').Router();
-const mongoose = require('mongoose');
-// const Article = require('../models')
 const { Article, Contact } = require('../models');
 
 /* GET home page. */
@@ -23,7 +21,9 @@ router.get('/app', (req, res) => {
 router
     .route('/letsgrabacoffee')
     .get((req, res) => {
-        res.render('contact');
+        res.render('contact', {
+            siteTitle: `Contact Me, Let's grab a coffee :)`
+        });
     })
     .post((req, res) => {
         let body = req.body;
@@ -41,7 +41,10 @@ router
             });
         } else {
             Contact.create(body).then(result => {
-                res.render('contactSuccess', { result });
+                res.render('contactSuccess', {
+                    result,
+                    siteTitle: `Contact Me, Let's grab a coffee :)`
+                });
             });
         }
     });

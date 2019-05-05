@@ -1,12 +1,8 @@
 const router = require('express').Router();
 const axios = require('axios');
 const cheerio = require('cheerio');
-const mongoose = require('mongoose');
-const util = require('util');
 
-const Article = require('../models').Article;
-const Site = require('../models').Site;
-const Carousel = require('../models').Carousel;
+const { Article } = require('../models');
 
 router.get('/scrape', function(req, res, next) {
     axios
