@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const mongoose = require('mongoose');
-const Article = require('../models').Article;
+// const Article = require('../models')
+const { Article, Contact } = require('../models');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -18,5 +19,31 @@ router.get('/app', (req, res) => {
         });
     });
 });
+
+router
+    .route('/letsgrabacoffee')
+    .get((req, res) => {
+        res.render('contact');
+    })
+    .post((req, res) => {
+        let body = req.body;
+        let firstName = body.firstName,
+            lastName = body.lastName,
+            email = body.email,
+            handle = body.socialHandle,
+            link = body.link,
+            msg = body.msg;
+
+        if (!firstName && !lastName && !email && !msg) {
+            res.render('error', {
+                message:
+                    'Either First Name, Last Name, Email, and/or Message was missing.'
+            });
+        } else {
+            Contact.create(body).then(result => {
+                res.render('contactSuccess', { result });
+            });
+        }
+    });
 
 module.exports = router;
