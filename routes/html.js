@@ -1,4 +1,6 @@
 const router = require('express').Router();
+const mongoose = require('mongoose');
+const Article = require('../models').Article;
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -8,8 +10,12 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/app', (req, res) => {
-    res.render('index', {
-        siteTitle: 'GreenEnergyFTW - Your news for all things Green Energy'
+    Article.find({}, (err, doc) => {
+        if (err) throw err;
+        res.render('index', {
+            siteTitle: 'GreenEnergyFTW - Your news for all things Green Energy',
+            doc
+        });
     });
 });
 
