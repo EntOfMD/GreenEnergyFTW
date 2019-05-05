@@ -1,6 +1,7 @@
 <main role="main">
 
     <section class="jumbotron text-center">
+        <img class="img-fluid" src="/img/GreenEnergyFTW_Social_Github.png" alt="">
         <div class="container" id="top">
             {{!-- {{> carousel}} --}}
         </div>
@@ -10,8 +11,9 @@
         <div class="container">
             <div class="card-deck">
                 <div class="row">
+                    {{#if doc}}
                     {{#each doc}}
-                    <div class="col-4">
+                    <div class="col-lg-4">
                         <div class="card ml-auto mr-auto mt-3 border-left shadow p-3">
                             {{#if this.img}}
                             <img src="{{this.img}}" class="card-img-top img-thumbnail" alt="{{this.item.title}} image">
@@ -20,10 +22,10 @@
                                 class="card-img-top img-thumbnail" alt="{{this.title}}">
                             {{/if}}
                             <div class="card-body">
-
                                 <h5 class="card-title leading"><i class="fas fa-bullhorn fa-xs"></i> {{this.title}}
                                 </h5>
                                 <p class="card-text"><i class="fas fa-comment-alt"></i> {{this.text}}</p>
+                                <p class="small">Last Scraped: {{this.scrapedDate}}</p>
                             </div>
                             <div class="card-footer">
                                 <div class="d-flex justify-content-between align-items-center">
@@ -43,6 +45,9 @@
                         </div>
                     </div><br />
                     {{/each}}
+                    {{else}}
+                    {{> rescrape}}
+                    {{/if}}
                 </div>
             </div>
         </div>
