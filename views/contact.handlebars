@@ -1,0 +1,57 @@
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <form method="POST">
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="firstName">First Name</label>
+                    <input type="text" autocomplete="off" class="form-control" id="firstName" placeholder="Alton"
+                        name="firstName" required>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="lastName">Last Name</label>
+                    <input autocomplete="off" type="text" class="form-control" id="lastName" placeholder="Brown"
+                        name="lastName" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="you@gmail.com"
+                        required>
+                </div>
+                <div class="form-group col-md-6">
+
+
+
+                    <label class="sr-only" for="socialHandle">Username</label>
+                    <label for="socialHandle">Social Handle?</label>
+                    <div class="input-group mb-2">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">@</div>
+                        </div>
+                        <input type="text" class="form-control" id="socialHandle" placeholder="Username"
+                            name="socialHandle">
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <label for="link">Your Website</label>
+                    <input type="url" class="form-control" id="link" name="link"
+                        placeholder="https://entofmd.github.io/">
+
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <label for="textArea">What's on your mind?</label>
+                    <textarea class="form-control" id="textArea" rows="3" name="msg" placeholder="How's it going? "
+                        required></textarea>
+                </div>
+            </div>
+            <input id="ContactSubmit" class="btn btn-primary" type="submit" value="Submit!" />
+        </form>
+    </div>
+</div>

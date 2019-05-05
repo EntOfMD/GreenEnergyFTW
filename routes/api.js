@@ -6,6 +6,7 @@ const util = require('util');
 
 const Article = require('../models').Article;
 const Site = require('../models').Site;
+const Carousel = require('../models').Carousel;
 
 router.get('/scrape', function(req, res, next) {
     axios
@@ -52,7 +53,37 @@ router.get('/scrape', function(req, res, next) {
             });
         });
 
-    res.redirect(301, '/app');
+    setTimeout(() => {
+        res.redirect(301, '/app');
+    }, 1000);
 });
+
+router
+    .route('/addCarousel')
+    .get((req, res) => {
+        Carousel.find({}, (err, doc) => {
+            res.json(doc);
+        });
+    })
+    .post((req, res) => {
+        let body = req.body;
+
+        if (body.url && body.poster && body.title) {
+            let entry = {
+                url: req.body.url,
+                poster: req.body.poster,
+                title: req.body.title
+            };
+
+            Carousel.create(body).then(entries => {
+                res.redirect(301, '/app');
+            });
+        } else {
+            res.render('error', {
+                message: `Make sure to fill out ALL the fields :)`,
+                errorCode: '401'
+            });
+        }
+    });
 
 module.exports = router;

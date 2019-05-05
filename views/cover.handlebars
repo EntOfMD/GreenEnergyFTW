@@ -1,17 +1,16 @@
 <style>
-    /* Custom default button */
     .btn-secondary,
     .btn-secondary:hover,
     .btn-secondary:focus {
         color: #333;
         text-shadow: none;
-        /* Prevent inheritance from `body` */
         background-color: #fff;
         border: .05rem solid #fff;
     }
 
     html,
-    body {
+    body,
+    .jumbotron {
         height: 100%;
         background-color: #333;
     }
@@ -21,16 +20,23 @@
         text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5);
         box-shadow: inset 0 0 5rem rgba(0, 0, 0, .5);
     }
-
-    #cover {
-        margin: 200px;
-    }
 </style>
-<div id="cover" class="text-center">
-    <h1 class="cover-heading">Welcome to {{siteTitle}}</h1>
-    <p class="lead">This app scrapes the news for renewable energy posts. In order to get the most recent news, you'd
-        need to activate the scrape. </p>
-    <p class="lead">
-        <a href="/api/scrape" class="btn btn-lg btn-secondary"><i class="fas fa-screwdriver"></i> Scrape!</a>
-    </p>
+
+
+<div class="jumbotron jumbotron-fluid text-center">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="cover-heading">Welcome to {{siteTitle}}</h1>
+                <p class="lead">This app scrapes the news for renewable energy posts. In order to get the most recent
+                    news,
+                    you'd
+                    need to activate the scrape. </p>
+                <p class="lead">
+                    <a href="/api/scrape" class="btn btn-lg btn-secondary"><i class="fas fa-screwdriver"></i>
+                        Scrape!</a>
+                </p>
+            </div>
+        </div>
+    </div>
 </div>
