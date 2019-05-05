@@ -1,5 +1,21 @@
 const router = require('express').Router();
 const { Article, Contact } = require('../models');
+const nodemailer = require('nodemailer');
+
+const transporter = nodemailer.createTransport({
+    service: process.env.NODEMAILER_SERVICE,
+    auth: {
+        user: process.env.NODEMAILER_USER,
+        pass: process.env.NODEMAILER_PASS
+    }
+});
+
+var mailOptions = {
+    from: process.env.NODEMAILER_FROM,
+    to: process.env.NODEMAILER_TO,
+    subject: `You got a new contact form filled!`,
+    html: ''
+};
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -41,6 +57,22 @@ router
             });
         } else {
             Contact.create(body).then(result => {
+                mailOptions.html = `<h1>Hey Boss!</h1><br/>
+                ${result.firstName} ${
+                    result.lastName
+                } is trying to get in touch with you.<br/>
+                The email is ${result.email}, the social media handle is ${
+                    result.handle
+                }, the link to the website ${result.link}. The message ${
+                    result.firstName
+                } left was ${result.msg}. <br/><br/>
+                Here is the full details:<br/><br/>
+                ${result}`;
+
+                transporter.sendMail(mailOptions, (err, info) => {
+                    if (err) throw err;
+                    console.log(`Email Succesfully sent. ${info.response}`);
+                });
                 res.render('contactSuccess', {
                     result,
                     siteTitle: `Contact Me, Let's grab a coffee :)`
