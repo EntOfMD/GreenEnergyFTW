@@ -4,6 +4,11 @@
   
 } */
 
+:root {
+    --primary: blue !important;
+    --blue: red !important;
+}
+
 a {
     color: #00b7ff;
 }
@@ -39,6 +44,14 @@ a {
 
 .jumbotron .container {
     max-width: 40rem;
+}
+
+#rescrapeCard {
+    left: 50%;
+}
+
+#addCarouselCard {
+    display: none;
 }
 
 footer {
