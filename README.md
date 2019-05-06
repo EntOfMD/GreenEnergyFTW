@@ -1,3 +1,5 @@
+![Dam with Words in sky GreenEnergyFTW](https://raw.githubusercontent.com/EntOfMD/GreenEnergyFTW/master/public/img/GreenEnergyFTW_Social_Github.png 'GreenEnergyFTW')
+
 # GreenEnergyFTW
 
 A site for all things green energy news, utilizing cheerio to scrape and mongodb to store the results.
