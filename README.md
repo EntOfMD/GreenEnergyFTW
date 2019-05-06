@@ -6,8 +6,6 @@ A site for all things green energy news, utilizing cheerio to scrape and mongodb
 
 ## How it works
 
----
-
 To understand _HOW_ it works, let's take a look at **WHAT** it uses.
 
 -   **Web Framework** - used for front-end
@@ -48,8 +46,6 @@ To understand _HOW_ it works, let's take a look at **WHAT** it uses.
 
 ## Future Plans
 
----
-
 -   Add feature for users to add in scrape URL
 -   _complete_ the feature allowing users to submit their own images for the main carousel
 -   scrape the site name, date, etc info
@@ -63,6 +59,6 @@ Send me an email: https://greenenergyftw.herokuapp.com/letsgrabacoffee
 
 [GreenEnergyFTW](https://github.com/EntOfMD/GreenEnergyFTW)
 
-[EntOfMD's Portfolio](https://entofmd.github.io/Bootstrap-Portfolio/portfolio.html)
+[EntOfMD's Portfolio](https://entofmd.github.io/portfolio.html#10)
 
 Ashell F\_ &copy; 2019
