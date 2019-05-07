@@ -24,18 +24,24 @@
 
     <div class="navbar navbar-dark bg-dark shadow-sm">
         <div class="container d-flex justify-content-between">
-            <a href="/" id="navBrand" class="navbar-brand">
-                <i class="far fa-newspaper"></i> GreenEnergyFTW
+            <a href="/app" id="navBrand" class="navbar-brand">
+                <i class="far fa-newspaper"></i> GreenEnergyForTheWin
 
             </a>
-            <a href="/api/scrape" class=" ml-auto mr-2">
-                <button type="button" class="btn btn-outline-warning rescrape"><i class="fas fa-sync"></i>
-                    Re-Scrape! <span id="badgeNum" class="badge badge-light">0</span></button>
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader"
-                aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+            <div class="btn-group" role='group'>
+                <a href="/api/notes" class=" ml-auto mr-2">
+                    <button type="button" class="btn btn-outline-info rescrape"><i class="fas fa-comments"></i>
+                        Comments</button>
+                </a>
+                <a href="/api/scrape" class=" ml-auto mr-2">
+                    <button type="button" class="btn btn-outline-warning rescrape"><i class="fas fa-sync"></i>
+                        Re-Scrape!</button>
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader"
+                    aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
         </div>
     </div>
 </header>
