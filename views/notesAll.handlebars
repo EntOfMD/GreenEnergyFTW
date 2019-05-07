@@ -1,0 +1,17 @@
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+
+        {{#each noteRes }}
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">{{this._articleTitle}}</h4>
+                <blockquote class="blockquote mb-0">
+                    <p>{{this.msg}}</p>
+                    <footer class="blockquote-footer">{{this.name}}
+                        <small class="text-muted">{{this.date}}</small></footer>
+                </blockquote>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>

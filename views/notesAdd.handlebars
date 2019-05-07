@@ -1,0 +1,38 @@
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+
+{{#if doc.title}}
+
+        <h3>Add a note for <span class="text-info">{{doc.title}}</span></h3>
+{{else}}
+        <h3>There aren't any comments yet, Add one in!</h3>
+
+{{/if}}
+        <form action="/api/notes" method="POST">
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <label for="Name">Your Name</label>
+                    <input type="text" autocomplete="off" class="form-control" id="Name" placeholder="Alton" name="name"
+                        required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <label for="textArea">Type a note:</label>
+                    <textarea class="form-control" id="textArea" rows="3" name="msg"
+                        placeholder="This is visible to everyone!" required></textarea>
+                </div>
+                <label for="articleId">Article ID:</label>
+                {{#if doc._id}}
+                <input type="text" autocomplete="off" readonly class="form-control" name="articleId" id="articleId"
+                    value="{{doc._id}}">
+                {{else}}
+                <input type="text" autocomplete="off" class="form-control" name="articleId" id="articleId" value="" placeholder="Type the ID here"
+                    required>
+                {{/if}}
+
+            </div>
+            <input id="noteSubmit" class="btn btn-primary m-2" type="submit" value="Submit!" />
+        </form>
+    </div>
+</div>
