@@ -20,18 +20,19 @@ var mailOptions = {
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('cover', {
-    siteTitle: 'GreenEnergyFTW - Your news for all things Green Energy'
+    siteTitle: 'RenewableEnergyFTW - Your news for all things Renewable Energy'
   });
 });
 
 router.get('/app', (req, res) => {
-  Article.find({}, (err, doc) => {
+  Article.find((err, doc) => {
     if (err) throw err;
     res.render('index', {
-      siteTitle: 'GreenEnergyFTW - Your news for all things Green Energy',
+      siteTitle:
+        'RenewableEnergyFTW - Your news for all things Renewable Energy',
       doc
     });
-  });
+  }).sort({ scrapedDate: -1 });
 });
 
 router

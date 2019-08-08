@@ -12,7 +12,11 @@
     body,
     .jumbotron {
         height: 100%;
-        background-color: #333;
+        background: url('http://powidian.com/wp-content/uploads/2015/04/beautiful-wind-turbines-at-night-wide.jpg') no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
     }
 
     body {
@@ -33,10 +37,13 @@
                     you'd
                     need to activate the scrape. </p>
                 <p class="lead">
-                    <a href="/api/scrape" class="btn btn-lg btn-secondary"><i class="fas fa-screwdriver"></i>
-                        Scrape!</a>
+                    <a href="/api/scrape" class="btn btn-lg btn-secondary shadow">
+                        <i class="fas fa-greater-than "></i>
+                        Enter Site </a>
                 </p>
-                <p class="small"><a href="/app">Enter anyway</a></p>
+                <p class="small"><a href="/app">Enter without scraping - *!WARNING!: Content will NOT be up to
+                        date!*</a>
+                </p>
             </div>
         </div>
     </div>

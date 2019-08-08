@@ -5,73 +5,106 @@
 } */
 
 :root {
-    --primary: blue !important;
-    --blue: red !important;
+  --primary: blue !important;
+  --blue: red !important;
+}
+
+html,
+body,
+.album {
+  background: url('https://brightensolarco.com/_wp/wp-content/uploads/renewable-energy-solutions.jpg')
+    no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 a {
-    color: #00b7ff;
+  color: #00b7ff;
 }
 #badgeNum {
-    display: none;
+  display: none;
 }
 
 #navBrand {
-    text-transform: capitalize;
+  text-transform: capitalize;
 }
 .bd-placeholder-img {
-    font-size: 1.125rem;
-    text-anchor: middle;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+  font-size: 1.125rem;
+  text-anchor: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 .jumbotron {
-    padding-top: 3rem;
-    padding-bottom: 3rem;
-    margin-bottom: 0;
-    background-color: #fff;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  margin-bottom: 0;
+  background-color: #fff;
+  background: url('https://brightensolarco.com/_wp/wp-content/uploads/renewable-energy-solutions.jpg')
+    no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 .jumbotron p:last-child {
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
 
 .jumbotron-heading {
-    font-weight: 300;
+  font-weight: 300;
 }
 
 .jumbotron .container {
-    max-width: 40rem;
+  max-width: 40rem;
 }
 
 #rescrapeCard {
-    left: 50%;
+  left: 50%;
 }
 
 #addCarouselCard {
-    display: none;
+  display: none;
 }
 
 footer {
-    padding-top: 3rem;
-    padding-bottom: 3rem;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
 }
 
 footer p {
-    margin-bottom: 0.25rem;
+  margin-bottom: 0.25rem;
+}
+
+.bg-light {
+  border: none !important;
+}
+
+.card {
+  background: url('/img/card_background.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.card-body {
+  background-color: rgba(255, 255, 255, 0.5);
 }
 
 @media (min-width: 768px) {
-    .bd-placeholder-img-lg {
-        font-size: 3.5rem;
-    }
+  .bd-placeholder-img-lg {
+    font-size: 3.5rem;
+  }
 }
 
 @media (min-width: 768px) {
-    .jumbotron {
-        padding-top: 6rem;
-        padding-bottom: 6rem;
-    }
+  .jumbotron {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
 }

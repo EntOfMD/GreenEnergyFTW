@@ -66,16 +66,19 @@ router
     });
   })
   .post((req, res) => {
+    // let body = JSON.stringify(req.body, null, 2);
     let body = req.body;
 
-    if (body.url && body.poster && body.title) {
+    if (body.img && body.poster && body.title) {
       let entry = {
-        url: req.body.url,
+        img: req.body.img,
         poster: req.body.poster,
         title: req.body.title
       };
+      console.log(entry);
 
       Carousel.create(body).then(entries => {
+        console.log(entries);
         res.redirect(301, '/app');
       });
     } else {
