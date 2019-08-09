@@ -7,11 +7,20 @@ const createError = require('http-errors');
 const mongoose = require('mongoose');
 
 const logger = require('morgan');
+const helmet = require('helmet');
 
 const apiRouter = require('./routes/api');
 const htmlRouter = require('./routes/html');
 
 const app = express();
+
+app.use(
+  helmet({
+    noCache: true,
+    permittedCrossDomainPolicies: true
+  })
+);
+
 var MONGODB_URI =
   process.env.MONGODB_URI || 'mongodb://localhost/GreenEnergyFTW';
 // database

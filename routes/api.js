@@ -8,7 +8,7 @@ router.get('/scrape', function(req, res, next) {
   axios
     .get(
       // `https://news.google.com/topics/CAAqIQgKIhtDQkFTRGdvSUwyMHZNRFptYUhNU0FtVnVLQUFQAQ`
-      `https://www.google.com/search?q=renewable%20energy&tbm=nws`
+      `https://www.google.com/search?q=boxing&tbm=nws`
     )
     .then(axres => {
       const $ = cheerio.load(axres.data);
@@ -37,6 +37,19 @@ router.get('/scrape', function(req, res, next) {
         result.date = $(this)
           .find('.f')
           .text();
+
+        // trying to avoid duplicate entries, cant find solution
+        // Article.find(
+        //   {
+        //     title: $(this)
+        //       .find('.r')
+        //       .text()
+        //   },
+        //   (err, dbFindDuplicates) => {
+        //     if (err) throw err;
+        //     console.log(dbFindDuplicates, element);
+        //   }
+        // );
 
         // Site.create()
         Article.create(result)

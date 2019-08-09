@@ -12,8 +12,7 @@
 html,
 body,
 .album {
-  background: url('https://brightensolarco.com/_wp/wp-content/uploads/renewable-energy-solutions.jpg')
-    no-repeat center center fixed;
+  background: url('/img/main-background.jpg') no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -43,8 +42,7 @@ a {
   padding-bottom: 3rem;
   margin-bottom: 0;
   background-color: #fff;
-  background: url('https://brightensolarco.com/_wp/wp-content/uploads/renewable-energy-solutions.jpg')
-    no-repeat center center fixed;
+  background: url('/img/main-background.jpg') no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
